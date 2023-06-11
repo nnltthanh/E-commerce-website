@@ -2,9 +2,11 @@ const { MongoClient } = require('mongodb');
 
 class MongoDB{
     //auto connect when call MongoDB
-    static async connect(uri) {
-        if (!this.client)    
-            this.client = await MongoClient.connect(uri);
+    static async connectMongoDB(uri) {
+        if (!this.client){   
+            this.client = new MongoClient(uri);
+            await this.client.connect(); 
+        }    
         return this.client;    
     }
 }

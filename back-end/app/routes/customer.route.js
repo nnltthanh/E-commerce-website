@@ -1,21 +1,22 @@
 const express = require('express');
 const customer = require('../controllers/customer.controller');
-const { route } = require('../../app');
+// const { route } = require('../../app');
 
-const customerRouter = express.Router();
+const customer_router = express.Router();
 
-customerRouter.route("/")
+customer_router.route("/")
     .get()
     .post()
     .delete()
     .patch();
 
-customerRouter.route("/product")
+customer_router.route("/product")
     .get();
 
-customerRouter.route("/cart")
+customer_router.route("/cart")
     .get()
     .delete()
     .patch();
 
-module.exports = customerRouter;
+
+module.exports = customer_router;
